@@ -6,67 +6,148 @@
     <title>B11256050 吳函倢</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url(img/電子商務3.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
         header {
-            background-color: rgb(206, 66, 150);
+            background: #333;
             color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 36px;
+            padding: 1em 0;
         }
 
-        aside {
-            background-color: rgb(120, 184, 224);
-            padding: 15px;
-            color: white;
-            text-align: center;
-            font-size: 24px;
-            height: 500px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
         }
 
-        Article{
-            background-color:white;
-            padding: 15px;
-            font-size: 18px;
-            float: right;
-            display: block;
-            width: 70%;
-            height: 70%;
+        nav ul li {
+            margin: 0 1em;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #555;
+        }
+
+        main {
+            flex: 1;
+            padding: 2em;
+            text-shadow: 1cap;
         }
 
         footer {
-            background-color: #0099cc;
-            color: #ffffff;
+            background: #333;
+            color: white;
             text-align: center;
-            font-size: 12px;
-            padding: 15px;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
         }
 
-        @media only screen and (max-width:480px){
-            nav{display:none;}
-            main{width:100%;}
-            aside{width:none;}
+        img{
+            opacity: 0.1;
         }
 
-        @media only screen and (min-width:481px) and (max-width:768px){
-            nav{display:none;}
-            main{width:75%;}
-            aside{width:25%;}
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
         }
 
-        @media only screen and (min-width:769px){
-            nav{display:block;}
-            main{width:75%;}
-            aside{width:25%;}
+        label, input, textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 1em;
+        }
+
+        input, textarea {
+            padding: 0.5em;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0.5em 0;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            main {
+                padding: 3em;
+            }
+
+            form {
+                max-width: 600px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            main {
+                padding: 4em;
+            }
+
+            form {
+                max-width: 800px;
+            }
         }
 </style>
 </head>
 <body>
     <header>
-        歡迎來到我們的電子商務平台
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPage('我們的願景')">我們的願景</a></li>
+                <li><a href="#" onclick="showPage('我們的特色')">我們的特色</a></li>
+                <li><a href="#" onclick="showPage('我們的服務')">我們的服務</a></li>
+                <li><a href="#" onclick="showPage('客戶評價')">客戶評價</a></li>
+                <li><a href="#" onclick="showPage('註冊福利')">註冊福利</a></li>
+                <li><a href="#" onclick="showPage('聯繫我們')">聯繫我們</a></li>
+            </ul>
+        </nav>
     </header>
-    <article>
-        <session>
+    
+    <main>
+        <section id="我們的願景" class="page active">
+            <h1>我們的特色</h1><br>
             在這個快速變化和高度連接的數字時代，我們的願景是成為全球領先的電子商務平台，<br>為每一位顧客提供無與倫比的購物體驗。<br>
             我們相信通過技術創新和卓越的服務，我們能夠改變人們的購物方式，並使其更加便捷、高效且令人愉快。<br><br>
             我們致力於構建一個安全、透明和信任的購物環境，讓消費者可以無憂地選購心儀的商品。<br>
@@ -84,18 +165,150 @@
             我們的願景不僅是成為一個購物平台，更希望成為一個能夠改變生活、促進社會進步的力量。<br>
             我們相信通過不懈的努力和對卓越的追求，我們能夠創造出一個更加美好和諧的世界。<br>
             我們期待與您一起，攜手前行，共同迎接未來的挑戰和機遇，創造更加美好的購物體驗和生活方式。
-        </session>
+        </section>
+
+        <section id="我們的特色" class="page">
+            <h1>我們的特色</h1><br>
+            <P>廣泛的商品選擇</P>
+            我們平台擁有數百萬種商品，涵蓋了各個品類，包括時尚、電子產品、家居用品、美妝護理、圖書、玩具等。<br>
+            不論您是在尋找最新的電子產品還是經典的時尚單品，我們都能滿足您的需求。<br>
+            我們的產品來自全球各地的優質供應商，確保每一件商品的質量和可信度。<br><br>
+            <P>便捷的購物體驗</P>
+            我們的網站設計簡潔直觀，讓您可以輕鬆瀏覽和選購商品。<br>
+            我們提供多種支付方式，包括信用卡、電子錢包、線上支付等，確保您的支付過程順暢無阻。<br>
+            無論您是在家中還是移動中，都可以隨時隨地進行購物。<br><br>
+            <P>快速的配送服務</P>
+            我們與多家物流公司合作，提供快速可靠的配送服務。<br>
+            我們的智能配送系統可以根據您的地址自動選擇最合適的物流公司，確保您的訂單能夠及時送達。<br>
+            對於急需的商品，我們還提供當日達和次日達的服務，讓您不必再為等待煩惱。<br><br>
+            <P>安全保障</P>
+            我們採用先進的安全技術，保護您的個人信息和支付數據。<br>
+            我們的網站通過了多項國際安全認證，並設有多重安全防護措施，讓您可以安心購物。<br>
+            此外，我們的客戶服務團隊會隨時監控和處理任何可疑活動，確保您的帳戶安全。<br><br>
+            <P>社群互動</P>
+            我們鼓勵客戶參與平台社群，分享使用心得、推薦商品，並參與抽獎活動和促銷活動，促進互動和建立社群感。<br><br>
+            <P>全球化視野</P>
+            我們致力於打破國界限制，提供多語言介面和全球發貨服務，使顧客在全球範圍內都能方便地購買到他們喜愛的商品。<br><br>
+            <P>創新技術應用</P>
+            我們積極採用虛擬現實（VR）和擴增現實（AR）技術，讓顧客在線上購物時能夠更直觀地體驗商品，提升購物樂趣和滿意度。<br><br>
+            <P>綠色可持續</P>
+            我們堅持綠色環保理念，積極推廣綠色包裝和回收利用政策，以減少對環境的影響，並鼓勵供應商和顧客參與可持續發展。<br><br>
+            <P>數據安全保障</P>
+            我們採用最先進的數據加密技術和安全措施，保護顧客的個人信息和支付數據，確保資訊安全和隱私保護。
+        </section>
+
+        <section id="我們的服務" class="page">
+            <h1>我們的服務</h1><br>
+            <P>24/7客戶支持</P>
+            我們的客戶服務團隊全天候為您提供支持。
+            不論您在購物過程中遇到任何問題，或者對商品有任何疑問，我們的專業客服人員都會耐心解答並提供解決方案。
+            我們提供多種聯繫方式，包括電話、電子郵件、線上客服等，讓您可以隨時隨地獲得幫助。<br><br>
+            <P>靈活的退換貨政策</P>
+            如果您對購買的商品不滿意，我們提供靈活的退換貨服務。
+            我們理解有時候商品可能與您的期望不符，因此我們的退換貨政策非常簡單且透明。
+            只需幾個步驟，您就可以申請退貨或換貨，確保您的購物滿意度。<br><br>
+            <P>個性化推薦</P>
+            我們的智能推薦系統會根據您的購物喜好和歷史記錄，為您推薦最適合的商品。
+            無論您是首次訪問我們的平台還是忠實顧客，我們的系統都能精確了解您的需求，並提供個性化的購物建議，提升您的購物體驗。<br><br>
+            <P>定期促銷活動</P>
+            我們定期舉辦各類促銷活動，包括季節性折扣、特定品牌或產品類別的促銷等，讓顧客能夠享受到更多優惠和折扣。<br><br>
+            <P>教育資源</P>
+            我們提供豐富的教育資源，包括產品使用指南、行業資訊和購物小貼士，幫助顧客更好地理解和選擇合適的商品。<br><br>
+            <P>客製化禮品服務</P>
+            我們提供客製化禮品服務，包括禮品包裝、個性化賀卡和特別訂製的禮品，滿足顧客送禮的各種需求。<br><br>
+            <P>忠誠計劃</P>
+            我們設有忠誠計劃，為常客提供積分積累和專屬福利，鼓勵回購並感謝他們的長期支持。<br><br>
+            <P>社會責任倡議</P>
+            我們積極參與社會責任倡議活動，支持環境保護、教育支持和社區發展項目，回饋社會並促進可持續發展。
+        </section>
+
+        <section id="客戶評價" class="page">
+            <h1>客戶評價</h1><br>
+            我們非常重視客戶的反饋，並不斷改進以提供更好的服務。以下是一些來自我們滿意客戶的評價：<br><br>
+            "這是我用過最棒的電子商務平台，商品種類豐富，購物體驗非常好。" - 客戶C<br><br>
+            "配送速度非常快，客服也很耐心地解答了我的問題，非常滿意。" - 客戶D<br><br>
+            "我特別喜歡他們的個性化推薦功能，每次都能找到我喜歡的商品。" - 客戶E<br><br>
+            "退換貨過程非常簡單，我對他們的服務感到非常滿意。" - 客戶F<br><br>
+            "他們的客服非常專業，幫助我解決了許多購物疑問。" - 顧客G<br><br>
+            "我喜歡他們提供的快速配送服務，非常方便！" - 顧客H<br><br>
+            "退換貨流程簡單易懂，服務效率高，讓我有信心繼續在這裡購物。" - 顧客I<br><br>
+            "他們的網站介面設計得很直觀，使我能輕鬆找到想要的商品。" - 顧客J<br><br>
+            "每次購物都有意外的驚喜，比如免運費或特別折扣碼，讓我感到很受寵。" - 顧客K<br><br>
+            "他們的商品品質很高，從未讓我失望過。" - 顧客L<br><br>
+            "網站上的商品描述非常詳細，讓我能夠做出明智的選擇。" - 顧客M<br><br>
+            "他們的包裝非常精美，每次打開都像是一份特別的禮物。" - 顧客N<br><br>
+            "我喜歡他們定期推出的新品，總是能發現一些獨特的寶藏。" - 顧客O<br><br>
+            "他們的網站安全性很高，給人一種放心購物的感覺。" - 顧客P<br><br>
+            "他們的退款處理速度超乎我的想像，非常高效！" - 顧客Q<br><br>
+            "每次在他們網站上購物都是一種享受，選擇多樣化，服務貼心。" - 顧客R<br><br>
+            "我喜歡他們定期舉辦的折扣活動，能夠在購物中節省不少開支。" - 顧客S<br><br>
+            "他們的客戶回饋制度很好，能夠即時獲得回饋和支持。" - 顧客T<br><br>
+            "網站的搜尋功能非常靈活，能快速找到我需要的商品。" - 顧客U<br><br>
+            "他們的包裝細節做得非常好，讓我每次收到貨物都感到滿意。" - 顧客V<br><br>
+            "客服人員的態度非常友好和專業，處理問題迅速有效。" - 顧客W<br><br>
+            "我很喜歡他們的用戶界面設計，簡潔清晰，使用起來很順暢。" - 顧客X<br><br>
+            "他們的商品價格競爭力很強，比其他平台便宜不少。" - 顧客Y<br><br>
+            "他們的快遞服務非常準時，從未遇到過延遲問題。" - 顧客Z
+        </section>
+
+        <section id="註冊福利" class="page">
+            <h1>註冊福利</h1><br>
+            <p>註冊成為會員：開啟專屬購物之旅</p><br>
+            歡迎加入我們的電子商務平台！註冊成為會員是您探索無限購物可能性的第一步。<br>
+            成為會員不僅讓您享受到專屬的優惠和服務，還能體驗到我們獨特的購物體驗和社群互動。<br>
+            讓我們帶您了解註冊成為會員的各種好處和步驟。<br><br>
+            <p>簡便快捷的註冊流程</p><br>
+            註冊成為我們平台的會員非常簡便快捷。
+            您只需進入我們的官方網站或下載我們的手機應用程序，<br>點擊“註冊”按鈕，然後填寫一些基本信息，
+            如您的電子郵件地址、姓名和密碼。<br>
+            點擊“註冊完成”即可成為我們平台的正式會員！<br><br>
+            <p>專屬會員福利</p><br>
+            成為我們的會員，您將享受到一系列專屬福利和服務：<br><br>
+            首次購物優惠: 成為會員後，您將獲得首次購物的獨家折扣或優惠碼，讓您以更優惠的價格開始您的購物之旅。<br>
+            會員專屬活動: 我們定期舉辦會員專屬的促銷活動和限時特惠，讓您在購買心儀商品時能夠享受到更多折扣和驚喜。<br>
+            個性化推薦: 我們通過先進的數據分析技術，根據您的購物偏好和歷史記錄為您推薦個性化的商品，
+            節省您的時間並滿足您的需求。<br>
+            優先客戶服務: 作為會員，您將享有我們優先的客戶服務支持。<br><br>
+            如果您有任何問題或疑慮，我們的專業客服團隊將優先為您提供幫助和支持。<br>
+            追踪訂單: 您可以隨時登錄您的會員帳戶查看和追踪訂單狀態，確保您的購物體驗無懈可擊。<br><br>
+            <p>加入我們的社群</p>
+            成為會員還將使您成為我們社群的一部分。<br>
+            您可以參與我們的網絡討論、產品評論和分享購物心得，與其他會員交流和互動。<br>
+            這不僅是一個購物平台，更是一個可以分享和學習的社區。<br><br>
+            <p>安全保障</p>
+            我們致力於保護您的個人信息和隱私。<br>
+            我們採用最先進的加密技術和安全措施，確保您的信息在註冊和購物過程中得到安全保護。<br><br>
+            <p>立即註冊，開啟您的購物之旅！</p>
+            現在就註冊成為我們的會員吧！<br>
+            點擊下方的註冊按鈕，開啟專屬於您的購物之旅，探索無限的購物可能性，享受到獨特的會員福利和服務！
+        </section>
+
+        <section id="聯繫我們" class="page">
+            <h1>聯繫我們</h1><br>
+            <form>
+                <label for="name"><P>姓名：</P></label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="email"><P>Email：</P></label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="message"><P>訊息：</P></label><br>
+                <textarea id="message" name="message"></textarea><br>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
     </article>
-    <aside>
-        <nav>我們的願景<br><br></nav>
-        <nav>我們的特色<br><br></nav>
-        <nav>我們的服務<br><br></nav>
-        <nav>客戶評價<br><br></nav>
-        <nav>註冊成為會員<br><br></nav>
-        <nav>聯繫我們</nav>
-    </aside>
     <footer>
-        這篇關於電子商務的網頁內文包含了平台介紹、特色服務、客戶評價及聯繫方式，適合用於電子商務網站的首頁或介紹頁面。
+        © 2024 B11256050 吳函倢
     </footer>
+
+    <script>
+        function showPage(pageId) {
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(function(page) {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
 </body>
 </html>
